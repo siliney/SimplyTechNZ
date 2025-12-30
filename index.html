@@ -9,12 +9,12 @@
   <style>
     :root{
       --bg:#0b1220;
-      --card:#0f1a33;
-      --muted:#b9c2d0;
+      --card:rgba(255,255,255,.035);
+      --line:rgba(255,255,255,.10);
       --text:#eef2f7;
+      --muted:#b9c2d0;
       --brand:#19a463;
       --brand2:#0e7a4a;
-      --line:rgba(255,255,255,.10);
       --shadow: 0 14px 45px rgba(0,0,0,.35);
       --radius:18px;
     }
@@ -37,7 +37,7 @@
     .nav{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.68);
+      background: rgba(11,18,32,.70);
       border-bottom:1px solid var(--line);
     }
     .nav-inner{
@@ -74,6 +74,7 @@
       background: linear-gradient(135deg, var(--brand), var(--brand2));
       color:white; font-weight:800;
       box-shadow: 0 12px 35px rgba(25,164,99,.18);
+      white-space:nowrap;
     }
     .btn:hover{filter:brightness(1.05)}
     .btn.secondary{
@@ -91,15 +92,15 @@
       gap:22px;
       align-items:stretch;
     }
-    .hero-card{
-      background: rgba(255,255,255,.03);
+    .panel{
+      background: var(--card);
       border:1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
     }
-    .hero-card .pad{padding:26px;}
+    .pad{padding:26px;}
     .kicker{color:rgba(255,255,255,.75); font-weight:800; letter-spacing:.14em; font-size:12px;}
     h1{margin:10px 0 10px; font-size:40px; line-height:1.1;}
     .sub{color:var(--muted); font-size:16px; max-width:60ch;}
@@ -114,25 +115,7 @@
       font-size:13px;
     }
 
-    /* Image helper */
-    .img{
-      width:100%;
-      height:100%;
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-    }
-    .overlay{
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(11,18,32,.18), rgba(11,18,32,.92));
-      pointer-events:none;
-    }
-    .hero-img{
-      min-height:320px;
-      position:relative;
-    }
-
-    /* SECTIONS */
+    /* Sections */
     section{padding:34px 0;}
     .section-title{
       display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
@@ -140,56 +123,48 @@
     }
     .section-title h2{margin:0; font-size:26px;}
     .section-title p{margin:0; color:var(--muted); max-width:70ch;}
+
     .grid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
       gap:16px;
     }
     .card{
-      background: rgba(255,255,255,.03);
+      background: var(--card);
       border:1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .card .content{padding:16px;}
+    .content{padding:16px;}
     .card h3{margin:6px 0 6px; font-size:18px;}
     .card p{margin:0; color:var(--muted);}
     .card ul{margin:10px 0 0; padding-left:18px; color:rgba(255,255,255,.88)}
     .card li{margin:6px 0}
-    .thumb{
-      height:150px;
-      border-bottom:1px solid var(--line);
-    }
     .span-6{grid-column: span 6;}
     .span-4{grid-column: span 4;}
     .span-8{grid-column: span 8;}
     .span-12{grid-column: span 12;}
 
-    /* PRICING */
+    /* “Image” blocks (SVG) */
+    .thumb{
+      height:160px;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(500px 220px at 20% 10%, rgba(25,164,99,.22), transparent 60%),
+        radial-gradient(500px 220px at 80% 30%, rgba(75,130,255,.18), transparent 60%),
+        rgba(255,255,255,.02);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .thumb svg{width:86%; height:86%; max-height:140px;}
+
+    /* Pricing */
     .price{font-size:28px; font-weight:950; margin:12px 0 0;}
     .note{font-size:13px; color:rgba(255,255,255,.72)}
 
-    /* ABOUT */
-    .about-img{
-      min-height:280px;
-      position:relative;
-      border-radius: var(--radius);
-      border:1px solid var(--line);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .mini{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; color:rgba(255,255,255,.88);
-    }
-    .pill{
-      padding:10px 12px; border-radius:999px;
-      background: rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      font-size:14px;
-    }
-
-    /* CONTACT */
+    /* Contact */
     .contact-box{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -206,15 +181,20 @@
       font-size:14px;
     }
     textarea{min-height:120px; resize:vertical}
+    .mini{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; color:rgba(255,255,255,.88);}
+    .pill{
+      padding:10px 12px; border-radius:999px;
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      font-size:14px;
+    }
 
-    /* FOOTER */
     footer{
       padding:22px 0 30px;
       border-top:1px solid var(--line);
       color:rgba(255,255,255,.72);
     }
 
-    /* RESPONSIVE */
     @media (max-width: 900px){
       .hero-grid{grid-template-columns:1fr;}
       .span-6, .span-4, .span-8{grid-column: span 12;}
@@ -250,7 +230,7 @@
   <div id="top" class="hero">
     <div class="container">
       <div class="hero-grid">
-        <div class="hero-card">
+        <div class="panel">
           <div class="pad">
             <div class="kicker">HOME-BASED IT SERVICES • NEW ZEALAND</div>
             <h1>Affordable PC & Laptop Support — done properly.</h1>
@@ -273,9 +253,34 @@
           </div>
         </div>
 
-        <div class="hero-card hero-img">
-          <div class="img" style="background-image:url('https://source.unsplash.com/1600x900/?laptop,repair,technician');"></div>
-          <div class="overlay"></div>
+        <!-- Hero “image” (SVG illustration) -->
+        <div class="panel">
+          <div class="thumb" style="height:100%; min-height:320px;">
+            <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="IT support illustration">
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#19a463"/>
+                  <stop offset="1" stop-color="#2fb7ff"/>
+                </linearGradient>
+                <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0" stop-color="#0e7a4a"/>
+                  <stop offset="1" stop-color="#19a463"/>
+                </linearGradient>
+              </defs>
+              <rect x="110" y="70" width="520" height="320" rx="26" fill="url(#g)" opacity="0.20"/>
+              <rect x="140" y="95" width="520" height="320" rx="26" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" />
+              <rect x="170" y="125" width="460" height="250" rx="20" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
+              <path d="M300 250 l70 70 160-170" fill="none" stroke="url(#g)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="330" y="420" width="190" height="26" rx="13" fill="rgba(255,255,255,0.16)"/>
+              <path d="M250 470 h360" stroke="rgba(255,255,255,0.25)" stroke-width="14" stroke-linecap="round"/>
+              <circle cx="705" cy="155" r="10" fill="#19a463"/>
+              <circle cx="745" cy="195" r="14" fill="#2fb7ff"/>
+              <circle cx="690" cy="215" r="7" fill="#33d18f"/>
+              <rect x="675" y="260" width="180" height="115" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <path d="M710 330 h110" stroke="url(#g2)" stroke-width="18" stroke-linecap="round"/>
+              <path d="M710 295 h75" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round"/>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -292,8 +297,25 @@
       </div>
 
       <div class="grid">
+
+        <!-- OS setup -->
         <div class="card span-6">
-          <div class="thumb img" style="background-image:url('https://source.unsplash.com/1600x900/?windows,computer,setup');"></div>
+          <div class="thumb">
+            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Windows setup illustration">
+              <defs>
+                <linearGradient id="os" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#19a463"/>
+                  <stop offset="1" stop-color="#2fb7ff"/>
+                </linearGradient>
+              </defs>
+              <rect x="80" y="40" width="520" height="160" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <rect x="110" y="70" width="460" height="100" rx="16" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
+              <path d="M150 120 h250" stroke="rgba(255,255,255,0.22)" stroke-width="12" stroke-linecap="round"/>
+              <path d="M150 150 h190" stroke="rgba(255,255,255,0.18)" stroke-width="12" stroke-linecap="round"/>
+              <circle cx="700" cy="120" r="60" fill="url(#os)" opacity="0.22"/>
+              <path d="M665 120 l22 22 48-58" fill="none" stroke="url(#os)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <div class="content">
             <h3>💻 Operating System Setup & Configuration</h3>
             <p>Clean Windows install + secure setup to keep your device fast and reliable.</p>
@@ -305,8 +327,26 @@
           </div>
         </div>
 
+        <!-- SSD migration -->
         <div class="card span-6">
-          <div class="thumb img" style="background-image:url('https://source.unsplash.com/1600x900/?ssd,storage,hardware');"></div>
+          <div class="thumb">
+            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="SSD upgrade illustration">
+              <defs>
+                <linearGradient id="ssd" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#19a463"/>
+                  <stop offset="1" stop-color="#0e7a4a"/>
+                </linearGradient>
+              </defs>
+              <rect x="90" y="70" width="360" height="120" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <rect x="120" y="95" width="300" height="70" rx="14" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
+              <circle cx="155" cy="130" r="10" fill="#19a463"/>
+              <circle cx="190" cy="130" r="10" fill="#2fb7ff"/>
+              <path d="M520 130 h220" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round"/>
+              <path d="M650 95 l70 35 -70 35" fill="none" stroke="url(#ssd)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="760" y="85" width="70" height="90" rx="14" fill="url(#ssd)" opacity="0.22" stroke="rgba(255,255,255,0.18)"/>
+              <path d="M774 145 h42" stroke="url(#ssd)" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+          </div>
           <div class="content">
             <h3>💾 Hard Drive Upgrade & Data Migration</h3>
             <p>Upgrade to SSD/NVMe for a huge speed boost — without losing your important files.</p>
@@ -318,8 +358,25 @@
           </div>
         </div>
 
+        <!-- Repair -->
         <div class="card span-6">
-          <div class="thumb img" style="background-image:url('https://source.unsplash.com/1600x900/?computer,repair,tools');"></div>
+          <div class="thumb">
+            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="PC repair illustration">
+              <defs>
+                <linearGradient id="rep" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#2fb7ff"/>
+                  <stop offset="1" stop-color="#19a463"/>
+                </linearGradient>
+              </defs>
+              <rect x="90" y="60" width="380" height="140" rx="20" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <rect x="120" y="85" width="320" height="90" rx="14" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
+              <path d="M560 75 l80 80" stroke="url(#rep)" stroke-width="18" stroke-linecap="round"/>
+              <path d="M640 75 l-80 80" stroke="rgba(255,255,255,0.22)" stroke-width="18" stroke-linecap="round"/>
+              <circle cx="720" cy="150" r="48" fill="url(#rep)" opacity="0.18"/>
+              <path d="M720 118 v64" stroke="url(#rep)" stroke-width="14" stroke-linecap="round"/>
+              <path d="M688 150 h64" stroke="url(#rep)" stroke-width="14" stroke-linecap="round"/>
+            </svg>
+          </div>
           <div class="content">
             <h3>🛠️ PC & Laptop Fixing</h3>
             <p>Honest troubleshooting and repairs for common hardware and software issues.</p>
@@ -331,8 +388,27 @@
           </div>
         </div>
 
+        <!-- Gaming PC -->
         <div class="card span-6">
-          <div class="thumb img" style="background-image:url('https://source.unsplash.com/1600x900/?gaming,pc,build');"></div>
+          <div class="thumb">
+            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Gaming PC illustration">
+              <defs>
+                <linearGradient id="gm" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#19a463"/>
+                  <stop offset="1" stop-color="#2fb7ff"/>
+                </linearGradient>
+              </defs>
+              <rect x="120" y="50" width="220" height="160" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <rect x="150" y="80" width="160" height="100" rx="16" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
+              <circle cx="230" cy="130" r="28" fill="url(#gm)" opacity="0.25"/>
+              <circle cx="230" cy="130" r="14" fill="rgba(255,255,255,0.12)"/>
+              <rect x="420" y="95" width="360" height="90" rx="45" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <circle cx="520" cy="140" r="18" fill="url(#gm)" opacity="0.35"/>
+              <circle cx="680" cy="140" r="18" fill="url(#gm)" opacity="0.35"/>
+              <path d="M600 125 v30" stroke="rgba(255,255,255,0.22)" stroke-width="10" stroke-linecap="round"/>
+              <path d="M585 140 h30" stroke="rgba(255,255,255,0.22)" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+          </div>
           <div class="content">
             <h3>🎮 Second-Hand Budget Gaming PCs</h3>
             <p>Value-focused gaming builds made from tested used parts — optimised and stress-tested.</p>
@@ -344,8 +420,24 @@
           </div>
         </div>
 
+        <!-- RGB -->
         <div class="card span-12">
-          <div class="thumb img" style="background-image:url('https://source.unsplash.com/1600x900/?rgb,gaming,pc,lights');"></div>
+          <div class="thumb">
+            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="RGB lighting illustration">
+              <defs>
+                <linearGradient id="rgb" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ff4fd8"/>
+                  <stop offset=".5" stop-color="#2fb7ff"/>
+                  <stop offset="1" stop-color="#19a463"/>
+                </linearGradient>
+              </defs>
+              <rect x="90" y="70" width="520" height="120" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <rect x="120" y="95" width="460" height="70" rx="16" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
+              <path d="M140 130 h420" stroke="url(#rgb)" stroke-width="16" stroke-linecap="round"/>
+              <circle cx="700" cy="120" r="55" fill="url(#rgb)" opacity="0.18"/>
+              <path d="M700 85 l12 22 25 6 -18 18 4 26 -23-12 -23 12 4-26 -18-18 25-6z" fill="url(#rgb)" opacity="0.35"/>
+            </svg>
+          </div>
           <div class="content">
             <h3>🌈 RGB Gaming Light Installation</h3>
             <p>Clean RGB fan/strip installation, software setup, and tidy cable management for a great look.</p>
@@ -374,7 +466,15 @@
 
       <div class="grid">
         <div class="card span-4">
-          <div class="thumb img" style="background-image:url('https://source.unsplash.com/1600x900/?windows,laptop,installer');"></div>
+          <div class="thumb">
+            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Windows pricing illustration">
+              <defs><linearGradient id="p1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fb7ff"/><stop offset="1" stop-color="#19a463"/></linearGradient></defs>
+              <rect x="120" y="70" width="480" height="120" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <path d="M170 130 h240" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round"/>
+              <circle cx="700" cy="130" r="60" fill="url(#p1)" opacity="0.18"/>
+              <text x="680" y="145" font-size="52" fill="rgba(255,255,255,0.65)" font-family="system-ui,Segoe UI,Arial">$</text>
+            </svg>
+          </div>
           <div class="content">
             <h3>Windows Setup</h3>
             <div class="price">$79–$99</div>
@@ -383,7 +483,15 @@
         </div>
 
         <div class="card span-4">
-          <div class="thumb img" style="background-image:url('https://source.unsplash.com/1600x900/?ssd,nvme,upgrade');"></div>
+          <div class="thumb">
+            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="SSD pricing illustration">
+              <defs><linearGradient id="p2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19a463"/><stop offset="1" stop-color="#0e7a4a"/></linearGradient></defs>
+              <rect x="160" y="80" width="360" height="100" rx="20" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <rect x="190" y="105" width="300" height="50" rx="14" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
+              <circle cx="700" cy="130" r="60" fill="url(#p2)" opacity="0.18"/>
+              <text x="680" y="145" font-size="52" fill="rgba(255,255,255,0.65)" font-family="system-ui,Segoe UI,Arial">$</text>
+            </svg>
+          </div>
           <div class="content">
             <h3>SSD Upgrade + Migration</h3>
             <div class="price">from $99</div>
@@ -392,7 +500,15 @@
         </div>
 
         <div class="card span-4">
-          <div class="thumb img" style="background-image:url('https://source.unsplash.com/1600x900/?gaming,computer,setup');"></div>
+          <div class="thumb">
+            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Gaming PC pricing illustration">
+              <defs><linearGradient id="p3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4fd8"/><stop offset="1" stop-color="#2fb7ff"/></linearGradient></defs>
+              <rect x="140" y="60" width="220" height="140" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <circle cx="250" cy="130" r="30" fill="url(#p3)" opacity="0.25"/>
+              <circle cx="700" cy="130" r="60" fill="url(#p3)" opacity="0.18"/>
+              <text x="680" y="145" font-size="52" fill="rgba(255,255,255,0.65)" font-family="system-ui,Segoe UI,Arial">$</text>
+            </svg>
+          </div>
           <div class="content">
             <h3>Budget Gaming PC</h3>
             <div class="price">from $499</div>
@@ -419,7 +535,15 @@
 
       <div class="grid">
         <div class="card span-4">
-          <div class="thumb img" style="background-image:url('https://source.unsplash.com/1600x900/?customer,support,phone');"></div>
+          <div class="thumb">
+            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Message illustration">
+              <defs><linearGradient id="m1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fb7ff"/><stop offset="1" stop-color="#19a463"/></linearGradient></defs>
+              <rect x="150" y="80" width="520" height="110" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <path d="M200 120 h340" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round"/>
+              <path d="M200 155 h240" stroke="rgba(255,255,255,0.18)" stroke-width="14" stroke-linecap="round"/>
+              <circle cx="720" cy="135" r="52" fill="url(#m1)" opacity="0.18"/>
+            </svg>
+          </div>
           <div class="content">
             <h3>1) Message & Details</h3>
             <p>Tell me your device model, issue, and preferred time. I’ll reply with a clear estimate.</p>
@@ -427,7 +551,16 @@
         </div>
 
         <div class="card span-4">
-          <div class="thumb img" style="background-image:url('https://source.unsplash.com/1600x900/?computer,diagnostics,technician');"></div>
+          <div class="thumb">
+            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Diagnosis illustration">
+              <defs><linearGradient id="m2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19a463"/><stop offset="1" stop-color="#0e7a4a"/></linearGradient></defs>
+              <circle cx="290" cy="130" r="60" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <circle cx="290" cy="130" r="32" fill="url(#m2)" opacity="0.18"/>
+              <path d="M340 180 l70 50" stroke="rgba(255,255,255,0.22)" stroke-width="16" stroke-linecap="round"/>
+              <rect x="460" y="90" width="280" height="90" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <path d="M500 130 h200" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round"/>
+            </svg>
+          </div>
           <div class="content">
             <h3>2) Diagnose & Confirm</h3>
             <p>I confirm the cause, explain options, and you approve the work before I proceed.</p>
@@ -435,10 +568,17 @@
         </div>
 
         <div class="card span-4">
-          <div class="thumb img" style="background-image:url('https://source.unsplash.com/1600x900/?computer,testing,quality');"></div>
+          <div class="thumb">
+            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Test and handover illustration">
+              <defs><linearGradient id="m3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fb7ff"/><stop offset="1" stop-color="#19a463"/></linearGradient></defs>
+              <rect x="150" y="70" width="520" height="120" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+              <path d="M230 130 l60 60 150-165" fill="none" stroke="url(#m3)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="720" cy="130" r="60" fill="url(#m3)" opacity="0.18"/>
+            </svg>
+          </div>
           <div class="content">
             <h3>3) Fix, Test, Handover</h3>
-            <p>Work completed, tested, and summarised. You receive a simple invoice and support tips.</p>
+            <p>Work completed, tested, and summarised. You receive an invoice and support tips.</p>
           </div>
         </div>
       </div>
@@ -451,10 +591,7 @@
       <div class="section-title">
         <div>
           <h2>About SimplyTech</h2>
-          <p>
-            SimplyTech is a home-based IT service focused on practical results: faster devices, safer setups,
-            and honest advice — without retail shop prices.
-          </p>
+          <p>Home-based IT service focused on practical results: faster devices, safer setups, honest advice — without retail prices.</p>
         </div>
       </div>
 
@@ -480,11 +617,26 @@
         </div>
 
         <div class="span-4">
-          <div class="about-img">
-            <div class="img" style="background-image:url('https://source.unsplash.com/1200x1200/?circuit,technology,board');"></div>
-            <div class="overlay"></div>
+          <div class="panel">
+            <div class="thumb" style="height:100%; min-height:260px;">
+              <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" aria-label="Technology illustration">
+                <defs>
+                  <linearGradient id="ab" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#19a463"/>
+                    <stop offset="1" stop-color="#2fb7ff"/>
+                  </linearGradient>
+                </defs>
+                <rect x="160" y="120" width="580" height="280" rx="28" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+                <path d="M230 200 h440" stroke="rgba(255,255,255,0.22)" stroke-width="16" stroke-linecap="round"/>
+                <path d="M230 260 h300" stroke="rgba(255,255,255,0.18)" stroke-width="16" stroke-linecap="round"/>
+                <circle cx="260" cy="340" r="18" fill="url(#ab)" opacity="0.35"/>
+                <circle cx="320" cy="340" r="18" fill="url(#ab)" opacity="0.25"/>
+                <circle cx="380" cy="340" r="18" fill="url(#ab)" opacity="0.18"/>
+              </svg>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -505,7 +657,7 @@
           <div class="contact-box">
             <div>
               <h3 style="margin-top:0;">Quick Quote (Email)</h3>
-              <p class="note">This is a template. Use the button to email your details instantly.</p>
+              <p class="note">Tap the button below to send your details by email instantly.</p>
 
               <div class="field">
                 <label>Name</label>
@@ -530,18 +682,31 @@
               </div>
             </div>
 
-            <div>
-              <div class="card" style="border-radius:16px; overflow:hidden;">
-                <div class="thumb img" style="height:340px; background-image:url('https://source.unsplash.com/1600x900/?helpdesk,computer,support');"></div>
+            <div class="panel">
+              <div class="thumb" style="height:100%; min-height:280px;">
+                <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" aria-label="Support illustration">
+                  <defs>
+                    <linearGradient id="ct" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#2fb7ff"/>
+                      <stop offset="1" stop-color="#19a463"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="300" cy="260" r="120" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+                  <path d="M240 260 l50 50 110-130" fill="none" stroke="url(#ct)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="480" y="180" width="280" height="160" rx="26" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+                  <path d="M520 235 h190" stroke="rgba(255,255,255,0.22)" stroke-width="16" stroke-linecap="round"/>
+                  <path d="M520 285 h140" stroke="rgba(255,255,255,0.18)" stroke-width="16" stroke-linecap="round"/>
+                </svg>
               </div>
-              <p class="note" style="margin-top:12px;">
-                Tip: Save this file as <b>index.html</b> in your GitHub repository root for GitHub Pages.
-              </p>
+              <div class="content">
+                <p class="note">Tip: Put this file as <b>index.html</b> in your GitHub repo root for GitHub Pages.</p>
+              </div>
             </div>
 
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
