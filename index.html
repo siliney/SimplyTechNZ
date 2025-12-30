@@ -4,14 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SimplyTech | Affordable IT Services (NZ)</title>
-  <meta name="description" content="SimplyTech provides affordable PC & laptop services: Windows setup, SSD upgrades with data migration, repairs, budget gaming PCs, and RGB setup." />
+  <meta name="description" content="SimplyTech provides Windows setup, SSD upgrades with data migration, PC/laptop repair, budget gaming PCs, and RGB setup in New Zealand." />
+
   <style>
     :root{
       --bg:#0b1220;
       --card:#0f1a33;
       --muted:#b9c2d0;
       --text:#eef2f7;
-      --brand:#19a463;   /* SimplyTech green */
+      --brand:#19a463;
       --brand2:#0e7a4a;
       --line:rgba(255,255,255,.10);
       --shadow: 0 14px 45px rgba(0,0,0,.35);
@@ -21,30 +22,31 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(25,164,99,.25), transparent 60%),
-                  radial-gradient(900px 500px at 80% 0%, rgba(75,130,255,.18), transparent 55%),
-                  var(--bg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(25,164,99,.25), transparent 60%),
+        radial-gradient(900px 500px at 80% 0%, rgba(75,130,255,.18), transparent 55%),
+        var(--bg);
       color:var(--text);
       line-height:1.55;
     }
     a{color:inherit; text-decoration:none}
     .container{max-width:1100px; margin:0 auto; padding:0 18px;}
+
     /* NAV */
     .nav{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.65);
+      background: rgba(11,18,32,.68);
       border-bottom:1px solid var(--line);
     }
     .nav-inner{
       display:flex; align-items:center; justify-content:space-between;
-      padding:12px 0;
-      gap:12px;
+      padding:12px 0; gap:12px;
     }
     .brand{
       display:flex; align-items:center; gap:10px;
-      font-weight:800; letter-spacing:.2px;
+      font-weight:900; letter-spacing:.2px;
     }
     .logo{
       width:36px; height:36px; border-radius:12px;
@@ -70,7 +72,7 @@
       padding:12px 16px; border-radius:14px;
       border:1px solid rgba(25,164,99,.35);
       background: linear-gradient(135deg, var(--brand), var(--brand2));
-      color:white; font-weight:700;
+      color:white; font-weight:800;
       box-shadow: 0 12px 35px rgba(25,164,99,.18);
     }
     .btn:hover{filter:brightness(1.05)}
@@ -80,6 +82,7 @@
       box-shadow:none;
       color:var(--text);
     }
+
     /* HERO */
     .hero{padding:46px 0 20px;}
     .hero-grid{
@@ -97,7 +100,7 @@
       position:relative;
     }
     .hero-card .pad{padding:26px;}
-    .kicker{color:rgba(255,255,255,.75); font-weight:700; letter-spacing:.14em; font-size:12px;}
+    .kicker{color:rgba(255,255,255,.75); font-weight:800; letter-spacing:.14em; font-size:12px;}
     h1{margin:10px 0 10px; font-size:40px; line-height:1.1;}
     .sub{color:var(--muted); font-size:16px; max-width:60ch;}
     .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;}
@@ -107,442 +110,23 @@
       background: rgba(255,255,255,.04);
       border:1px solid var(--line);
       border-radius:999px;
-      color:rgba(255,255,255,.80);
+      color:rgba(255,255,255,.82);
       font-size:13px;
     }
+
+    /* Image helper */
+    .img{
+      width:100%;
+      height:100%;
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+    }
+    .overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(11,18,32,.18), rgba(11,18,32,.92));
+      pointer-events:none;
+    }
     .hero-img{
-      height:100%;
-      min-height:290px;
-      background:
-        linear-gradient(180deg, rgba(11,18,32,.25), rgba(11,18,32,.85)),
-        url("https://images.unsplash.com/photo-1555617981-dac3880eac6d?auto=format&fit=crop&w=1600&q=70");
-      background-size:cover;
-      background-position:center;
-    }
-    /* SECTIONS */
-    section{padding:34px 0;}
-    .section-title{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
-      margin-bottom:16px;
-    }
-    .section-title h2{margin:0; font-size:26px;}
-    .section-title p{margin:0; color:var(--muted); max-width:70ch;}
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:16px;
-    }
-    .card{
-      background: rgba(255,255,255,.03);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .card .content{padding:16px;}
-    .card h3{margin:6px 0 6px; font-size:18px;}
-    .card p{margin:0; color:var(--muted);}
-    .card ul{margin:10px 0 0; padding-left:18px; color:rgba(255,255,255,.85)}
-    .card li{margin:6px 0}
-    .thumb{
-      height:140px;
-      background-size:cover;
-      background-position:center;
-      border-bottom:1px solid var(--line);
-    }
-    .span-6{grid-column: span 6;}
-    .span-4{grid-column: span 4;}
-    .span-8{grid-column: span 8;}
-    .span-12{grid-column: span 12;}
-    /* PRICING */
-    .price{
-      font-size:28px; font-weight:900; margin:12px 0 0;
-    }
-    .note{font-size:13px; color:rgba(255,255,255,.72)}
-    /* ABOUT */
-    .about-img{
-      height:100%;
-      min-height:260px;
-      background:
-        linear-gradient(180deg, rgba(11,18,32,.25), rgba(11,18,32,.92)),
-        url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=70");
-      background-size:cover;
-      background-position:center;
-      border-radius: var(--radius);
-      border:1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-    /* CONTACT */
-    .contact-box{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:16px;
-    }
-    .field{
-      display:flex; flex-direction:column; gap:8px;
-    }
-    input, textarea{
-      background: rgba(255,255,255,.03);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:12px 12px;
-      color:var(--text);
-      outline:none;
-      font-size:14px;
-    }
-    textarea{min-height:120px; resize:vertical}
-    .mini{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; color:rgba(255,255,255,.85);
-    }
-    .pill{
-      padding:10px 12px; border-radius:999px;
-      background: rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      font-size:14px;
-    }
-    /* FOOTER */
-    footer{
-      padding:22px 0 30px;
-      border-top:1px solid var(--line);
-      color:rgba(255,255,255,.72);
-    }
-    /* RESPONSIVE */
-    @media (max-width: 900px){
-      .hero-grid{grid-template-columns:1fr;}
-      .span-6, .span-4, .span-8{grid-column: span 12;}
-      .contact-box{grid-template-columns:1fr;}
-      h1{font-size:34px}
-      .links{display:none;}
-    }
-  </style>
-</head>
-
-<body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="#top" aria-label="SimplyTech home">
-          <div class="logo" aria-hidden="true"></div>
-          <span><b>Simply</b>Tech</span>
-        </a>
-        <div class="links" aria-label="Site navigation">
-          <a href="#services">Services</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#process">Process</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <a class="btn" href="tel:+64211778778">Call 021 177 8778</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <div id="top" class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-card">
-          <div class="pad">
-            <div class="kicker">HOME-BASED IT SERVICES • NEW ZEALAND</div>
-            <h1>Affordable PC & Laptop Support — done properly.</h1>
-            <p class="sub">
-              Windows setup, SSD upgrades with data migration, repairs, second-hand budget gaming PCs,
-              and RGB setup. Clear pricing, careful data handling, and friendly local support.
-            </p>
-
-            <div class="cta-row">
-              <a class="btn" href="#contact">Get a Free Quote</a>
-              <a class="btn secondary" href="#services">View Services</a>
-            </div>
-
-            <div class="badges">
-              <div class="badge">✅ Data-safe approach</div>
-              <div class="badge">✅ No upselling</div>
-              <div class="badge">✅ Tested & verified</div>
-              <div class="badge">✅ Fast turnaround</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-card hero-img" role="img" aria-label="Technician working on a laptop"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Services</h2>
-          <p>Professional, practical services for home users, students, and budget-conscious gamers.</p>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="card span-6">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1600&q=70');"></div>
-          <div class="content">
-            <h3>💻 Operating System Setup & Configuration</h3>
-            <p>Clean Windows install + secure setup to keep your device fast and reliable.</p>
-            <ul>
-              <li>Windows 10/11 install, updates, drivers</li>
-              <li>Microsoft 365 / Office setup</li>
-              <li>Performance optimisation & security basics</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card span-6">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1587202372775-e229f172b9d1?auto=format&fit=crop&w=1600&q=70');"></div>
-          <div class="content">
-            <h3>💾 Hard Drive Upgrade & Data Migration</h3>
-            <p>Upgrade to SSD/NVMe for a huge speed boost — without losing your important files.</p>
-            <ul>
-              <li>HDD → SSD / NVMe upgrade</li>
-              <li>OS migration + data preservation</li>
-              <li>Boot optimisation & health checks</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card span-6">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1600&q=70');"></div>
-          <div class="content">
-            <h3>🛠️ PC & Laptop Fixing</h3>
-            <p>Honest troubleshooting and repairs for common hardware and software issues.</p>
-            <ul>
-              <li>Slow performance, crashes, boot issues</li>
-              <li>Malware/cleanup & stability fixes</li>
-              <li>Hardware diagnostics (RAM, storage, thermals)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card span-6">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1587206668283-3e5f2b3b6f7a?auto=format&fit=crop&w=1600&q=70');"></div>
-          <div class="content">
-            <h3>🎮 Second-Hand Budget Gaming PCs</h3>
-            <p>Value-focused gaming builds made from tested used parts — optimised and stress-tested.</p>
-            <ul>
-              <li>Custom build to your budget & games</li>
-              <li>Clean Windows install + drivers</li>
-              <li>Stress test + basic upgrade advice</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card span-12">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?auto=format&fit=crop&w=1600&q=70');"></div>
-          <div class="content">
-            <h3>🌈 RGB Gaming Light Installation</h3>
-            <p>Clean RGB fan/strip installation, software setup, and tidy cable management for a great look.</p>
-            <ul>
-              <li>RGB strips/fans install + controller setup</li>
-              <li>Lighting profiles + sync configuration</li>
-              <li>Layout tips for a cleaner aesthetic</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Pricing</h2>
-          <p>Transparent “from” pricing — final cost depends on device condition and parts required.</p>
-        </div>
-        <a class="btn secondary" href="#contact">Ask for a Quote</a>
-      </div>
-
-      <div class="grid">
-        <div class="card span-4">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=70');"></div>
-          <div class="content">
-            <h3>Windows Setup</h3>
-            <div class="price">$79–$99</div>
-            <p class="note">Includes drivers, updates, and basic optimisation.</p>
-          </div>
-        </div>
-
-        <div class="card span-4">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1620287341056-49a2f90e21c4?auto=format&fit=crop&w=1600&q=70');"></div>
-          <div class="content">
-            <h3>SSD Upgrade + Migration</h3>
-            <div class="price">from $99</div>
-            <p class="note">Labour pricing. Parts cost depends on SSD/NVMe choice.</p>
-          </div>
-        </div>
-
-        <div class="card span-4">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1600&q=70');"></div>
-          <div class="content">
-            <h3>Budget Gaming PC</h3>
-            <div class="price">from $499</div>
-            <p class="note">Tested used parts + clean install + stress test.</p>
-          </div>
-        </div>
-      </div>
-
-      <p class="note" style="margin-top:12px;">
-        *GST not registered (until required). Payment due on completion. Data handling is careful, but customers should keep backups of critical files.
-      </p>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="process">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>How it Works</h2>
-          <p>A simple, professional process so you know what to expect.</p>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="card span-4">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70');"></div>
-          <div class="content">
-            <h3>1) Message & Details</h3>
-            <p>Tell me your device model, issue, and preferred time. I’ll reply with a clear estimate.</p>
-          </div>
-        </div>
-
-        <div class="card span-4">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1600&q=70');"></div>
-          <div class="content">
-            <h3>2) Diagnose & Confirm</h3>
-            <p>I confirm the cause, explain options, and you approve the work before I proceed.</p>
-          </div>
-        </div>
-
-        <div class="card span-4">
-          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1600&q=70');"></div>
-          <div class="content">
-            <h3>3) Fix, Test, Handover</h3>
-            <p>Work completed, tested, and summarised. You receive a simple invoice and support tips.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>About SimplyTech</h2>
-          <p>
-            SimplyTech is a home-based IT service focused on practical results: faster devices, safer setups,
-            and honest advice — without retail shop prices.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="span-8">
-          <div class="card">
-            <div class="content">
-              <h3>What you can expect</h3>
-              <ul>
-                <li><b>Clear communication</b> — you’ll understand the issue and the fix.</li>
-                <li><b>Data-first mindset</b> — backup/migration steps where applicable.</li>
-                <li><b>No upselling</b> — only what you actually need.</li>
-                <li><b>Tested outcomes</b> — boot, performance, and stability checks.</li>
-              </ul>
-
-              <div class="mini">
-                <div class="pill">📍 Home-based (NZ)</div>
-                <div class="pill">🕒 Fast turnaround</div>
-                <div class="pill">🧰 Budget-friendly solutions</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="span-4">
-          <div class="about-img" role="img" aria-label="Circuit board closeup"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Contact</h2>
-          <p>Send your details and I’ll reply with a clear quote. Or call directly.</p>
-        </div>
-        <a class="btn" href="tel:+64211778778">Call 021 177 8778</a>
-      </div>
-
-      <div class="card">
-        <div class="content">
-          <div class="contact-box">
-            <div>
-              <h3 style="margin-top:0;">Quick Quote Form (copy/paste into email)</h3>
-              <p class="note">This form is a template. For a working web form, you can connect it to Google Forms or Formspree later.</p>
-              <div class="field">
-                <label>Name</label>
-                <input placeholder="Your name" />
-              </div>
-              <div class="field" style="margin-top:10px;">
-                <label>Device + Issue</label>
-                <textarea placeholder="Example: Dell laptop, very slow. Want SSD upgrade and keep all files."></textarea>
-              </div>
-
-              <div class="cta-row" style="margin-top:12px;">
-                <a class="btn" href="mailto:info@simplytech.co.nz?subject=Quote%20Request%20-%20SimplyTech&body=Hi%20SimplyTech%2C%0A%0AName%3A%20%0APhone%3A%20%0ADevice%3A%20%0AIssue%2FService%3A%20%0APreferred%20time%3A%20%0A%0AThanks%2C">Email for Quote</a>
-                <a class="btn secondary" href="#pricing">See Pricing</a>
-              </div>
-
-              <div class="mini" style="margin-top:14px;">
-                <div class="pill">📧 info@simplytech.co.nz</div>
-                <div class="pill">📞 021 177 8778</div>
-              </div>
-            </div>
-
-            <div>
-              <div class="thumb" style="height:320px; border-radius:16px; border:1px solid var(--line);
-                background-image:
-                  linear-gradient(180deg, rgba(11,18,32,.20), rgba(11,18,32,.90)),
-                  url('https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=1600&q=70');">
-              </div>
-              <p class="note" style="margin-top:12px;">
-                Tip: When you publish on GitHub Pages, keep this file as <b>index.html</b> in your repository root.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-        <div>© <span id="year"></span> SimplyTech. All rights reserved.</div>
-        <div style="color:rgba(255,255,255,.72)">
-          Home-based IT services • Windows • SSD upgrades • Repairs • Gaming PCs • RGB
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
- 
+      min-height:320px;
+      position
