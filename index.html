@@ -1,524 +1,1091 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SimplyTech | Affordable IT Services (NZ)</title>
-  <meta name="description" content="SimplyTech provides Windows setup, SSD upgrades with data migration, PC/laptop repair, budget gaming PCs, and RGB setup in New Zealand." />
+  <meta charset="UTF-8">
+  <title>SimplyTech – Budget-Friendly Websites & Cloud for NZ Small Business</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="SimplyTech builds budget-friendly WordPress websites and cloud solutions for New Zealand small businesses. From $499 for a smart website and from $799 for online commerce.">
+  <meta name="keywords"
+        content="cheap website NZ, WordPress Auckland, small business website, budget web design, ecommerce website NZ, cloud email setup">
 
   <style>
-    :root{
-      --bg:#0b1220;
-      --card:rgba(255,255,255,.035);
-      --line:rgba(255,255,255,.10);
-      --text:#eef2f7;
-      --muted:#b9c2d0;
-      --brand:#19a463;
-      --brand2:#0e7a4a;
-      --shadow: 0 14px 45px rgba(0,0,0,.35);
-      --radius:18px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
-      background:
-        radial-gradient(1200px 600px at 20% 10%, rgba(25,164,99,.25), transparent 60%),
-        radial-gradient(900px 500px at 80% 0%, rgba(75,130,255,.18), transparent 55%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
-    a{color:inherit; text-decoration:none}
-    .container{max-width:1100px; margin:0 auto; padding:0 18px;}
-
-    /* NAV */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.70);
-      border-bottom:1px solid var(--line);
-    }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 0; gap:12px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:900; letter-spacing:.2px;
-    }
-    .logo{
-      width:36px; height:36px; border-radius:12px;
-      background: linear-gradient(135deg, var(--brand), #33d18f);
-      box-shadow: 0 8px 22px rgba(25,164,99,.25);
-      position:relative;
-    }
-    .logo:before, .logo:after{
-      content:""; position:absolute; inset:8px;
-      border:2px solid rgba(255,255,255,.7); border-radius:10px;
-    }
-    .logo:after{ inset:14px; border-radius:8px; opacity:.75; }
-    .brand span b{color:var(--brand)}
-    .links{display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end}
-    .links a{
-      color:var(--muted);
-      padding:8px 10px; border-radius:12px;
-      border:1px solid transparent;
-    }
-    .links a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.04)}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:12px 16px; border-radius:14px;
-      border:1px solid rgba(25,164,99,.35);
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      color:white; font-weight:800;
-      box-shadow: 0 12px 35px rgba(25,164,99,.18);
-      white-space:nowrap;
-    }
-    .btn:hover{filter:brightness(1.05)}
-    .btn.secondary{
-      background: rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      box-shadow:none;
-      color:var(--text);
+    :root {
+      --primary: #0d3b66;
+      --accent: #22b455;
+      --light: #f7f8fb;
+      --dark: #1b1b1f;
+      --muted: #74798a;
+      --max-width: 1100px;
+      --radius: 14px;
+      --shadow: 0 18px 40px rgba(15, 35, 52, 0.15);
     }
 
-    /* HERO */
-    .hero{padding:46px 0 20px;}
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:22px;
-      align-items:stretch;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    .panel{
-      background: var(--card);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: #ffffff;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e4e6f0;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 30%, #3cd47c, #0770a7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 10px 25px rgba(7, 112, 167, 0.4);
+    }
+
+    .logo-text-primary {
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--primary);
+    }
+
+    .logo-text-tagline {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(13, 59, 102, 0.35);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(13, 59, 102, 0.4);
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--primary);
+      border: 1px solid #d3d7e5;
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: #f2f4fa;
+      box-shadow: 0 10px 25px rgba(13, 59, 102, 0.12);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 40px 0 60px;
+      background: radial-gradient(circle at top left, #e8f8ff 0, #ffffff 53%);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4vw, 40px);
+      line-height: 1.1;
+      margin-bottom: 14px;
+      color: var(--primary);
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 18px;
       box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
+      display: grid;
+      gap: 8px;
+      font-size: 13px;
     }
-    .pad{padding:26px;}
-    .kicker{color:rgba(255,255,255,.75); font-weight:800; letter-spacing:.14em; font-size:12px;}
-    h1{margin:10px 0 10px; font-size:40px; line-height:1.1;}
-    .sub{color:var(--muted); font-size:16px; max-width:60ch;}
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;}
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
-    .badge{
-      padding:8px 10px;
-      background: rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      border-radius:999px;
-      color:rgba(255,255,255,.82);
-      font-size:13px;
+
+    .hero-card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .hero-price {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .hero-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #f0f4ff;
+      color: var(--primary);
+    }
+
+    .chip-green {
+      background: #e4f9ec;
+      color: #13723d;
     }
 
     /* Sections */
-    section{padding:34px 0;}
-    .section-title{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
-      margin-bottom:16px;
+    section {
+      padding: 60px 0;
     }
-    .section-title h2{margin:0; font-size:26px;}
-    .section-title p{margin:0; color:var(--muted); max-width:70ch;}
 
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:16px;
+    section:nth-of-type(even) {
+      background: var(--light);
     }
-    .card{
-      background: var(--card);
-      border:1px solid var(--line);
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    /* Features */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #fff;
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
+      padding: 18px 18px 20px;
+      box-shadow: 0 10px 28px rgba(19, 34, 56, 0.08);
+      border: 1px solid #eef0fa;
     }
-    .content{padding:16px;}
-    .card h3{margin:6px 0 6px; font-size:18px;}
-    .card p{margin:0; color:var(--muted);}
-    .card ul{margin:10px 0 0; padding-left:18px; color:rgba(255,255,255,.88)}
-    .card li{margin:6px 0}
-    .span-6{grid-column: span 6;}
-    .span-4{grid-column: span 4;}
-    .span-8{grid-column: span 8;}
-    .span-12{grid-column: span 12;}
 
-    /* “Image” blocks (SVG) */
-    .thumb{
-      height:160px;
-      border-bottom:1px solid var(--line);
+    .card h3 {
+      margin-bottom: 6px;
+      font-size: 16px;
+      color: var(--primary);
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      font-size: 11px;
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #eef8ff;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .price-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px 18px 22px;
+      box-shadow: 0 16px 40px rgba(15, 44, 78, 0.12);
+      border-top: 4px solid var(--primary);
+    }
+
+    .price-card.highlight {
+      border-top-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .price-name {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--primary);
+    }
+
+    .price-tagline {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .price-amount {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .price-note {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .price-features {
+      list-style: none;
+      font-size: 13px;
+      color: var(--muted);
+      margin: 8px 0 14px;
+    }
+
+    .price-features li {
+      padding-left: 16px;
+      position: relative;
+      margin: 4px 0;
+    }
+
+    .price-features li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      font-size: 11px;
+      color: var(--accent);
+      top: 3px;
+    }
+
+    /* Process */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .timeline-step {
+      padding: 16px 16px 18px;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px dashed #d9ddeb;
+    }
+
+    .timeline-step span {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 4px;
+    }
+
+    .timeline-step h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--primary);
+    }
+
+    .timeline-step p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* About & Industries */
+    .split {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag-cloud span {
+      font-size: 12px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #e1e4f3;
+      color: var(--primary);
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-radius: var(--radius);
+      border: 1px solid #e1e4f3;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+
+    .faq-item h3 {
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: var(--primary);
+    }
+
+    .faq-item p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 26px;
+    }
+
+    form label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+      color: var(--primary);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 9px 10px;
+      border-radius: 10px;
+      border: 1px solid #ccd1e3;
+      font-size: 14px;
+      margin-bottom: 12px;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    footer {
+      border-top: 1px solid #e3e5f0;
+      padding: 18px 0 26px;
+      font-size: 12px;
+      color: var(--muted);
+      background: #fafbff;
+    }
+
+    footer .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .grid-3,
+      .pricing-grid,
+      .timeline,
+      .split,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  
+    /* Sticky nav scroll effect */
+    .nav.scrolled{
+      background: linear-gradient(135deg, #19a463, #0e7a4a);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .nav.scrolled .links a,
+    .nav.scrolled .brand span,
+    .nav.scrolled .btn{
+      color:#ffffff;
+    }
+    .nav.scrolled .links a:hover{
+      background: rgba(255,255,255,.18);
+    }
+
+  
+    /* Top menu refresh (logo/menu/chat focus) */
+    header {
       background:
-        radial-gradient(500px 220px at 20% 10%, rgba(25,164,99,.22), transparent 60%),
-        radial-gradient(500px 220px at 80% 30%, rgba(75,130,255,.18), transparent 60%),
-        rgba(255,255,255,.02);
+        radial-gradient(900px 260px at 18% 50%, rgba(34,180,85,0.10), transparent 60%),
+        radial-gradient(900px 260px at 82% 50%, rgba(13,59,102,0.10), transparent 62%),
+        rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(228,230,240,.85);
+    }
+
+    .logo-wrap {
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), #1bd18f);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(34,180,85,.22);
+      border: 1px solid rgba(255,255,255,.35);
+    }
+
+    .nav-links{
+      display:flex;
+      gap: 6px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: 0 10px 26px rgba(0,0,0,.08);
+    }
+    .nav-links a{
+      padding: 10px 12px;
+      border-radius: 999px;
+      color: #1b1b1f;
+      font-weight: 700;
+      transition: transform .12s ease, background .12s ease;
+    }
+    .nav-links a:hover{
+      background: rgba(34,180,85,.12);
+      transform: translateY(-1px);
+    }
+
+    .chat-btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+    }
+    .chat-ico{
+      display:inline-flex;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg, var(--accent), #12a84a);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.35);
+      box-shadow: 0 10px 22px rgba(34,180,85,.20);
+    }
+
+    /* Floating (scrolled) state */
+    header.scrolled{
+      background: linear-gradient(135deg, var(--accent), #138a43);
+      border-bottom-color: rgba(0,0,0,.10);
+    }
+    header.scrolled .logo-text-primary,
+    header.scrolled .logo-text-tagline{
+      color:#ffffff;
+    }
+    header.scrolled .nav-links{
+      background: rgba(0,0,0,.12);
+      border-color: rgba(255,255,255,.22);
+      box-shadow: 0 12px 30px rgba(0,0,0,.20);
+    }
+    header.scrolled .nav-links a{
+      color:#ffffff;
+    }
+    header.scrolled .nav-links a:hover{
+      background: rgba(255,255,255,.18);
+    }
+    header.scrolled .btn.btn-outline{
+      border-color: rgba(255,255,255,.45);
+      color:#ffffff;
+    }
+
+    @media (max-width: 920px){
+      .nav-links{display:none;}
+      .logo-text-tagline{display:none;}
+    }
+
+  
+    /* Ensure single-line top menu */
+    header .nav,
+    header .nav * {
+      box-sizing: border-box;
+    }
+    header .nav {
+      white-space: nowrap;
+    }
+    .nav-inner,
+    .menu,
+    .nav-links,
+    .nav-actions {
+      flex-wrap: nowrap !important;
+      white-space: nowrap;
+    }
+    .menu a,
+    .nav-links a {
+      white-space: nowrap;
+    }
+
+  
+    /* Service sample images */
+    .service-img{
+      width:100%;
+      height:160px;
       display:flex;
       align-items:center;
       justify-content:center;
+      background: rgba(0,0,0,.04);
+      border-radius: 14px;
+      margin-bottom: 12px;
     }
-    .thumb svg{width:86%; height:86%; max-height:140px;}
-
-    /* Pricing */
-    .price{font-size:28px; font-weight:950; margin:12px 0 0;}
-    .note{font-size:13px; color:rgba(255,255,255,.72)}
-
-    /* Contact */
-    .contact-box{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:16px;
-    }
-    .field{display:flex; flex-direction:column; gap:8px;}
-    input, textarea{
-      background: rgba(255,255,255,.03);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:12px 12px;
-      color:var(--text);
-      outline:none;
-      font-size:14px;
-    }
-    textarea{min-height:120px; resize:vertical}
-    .mini{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; color:rgba(255,255,255,.88);}
-    .pill{
-      padding:10px 12px; border-radius:999px;
-      background: rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      font-size:14px;
+    .service-img img{
+      max-width:90%;
+      max-height:90%;
+      object-fit:contain;
+      filter: drop-shadow(0 12px 25px rgba(0,0,0,.25));
     }
 
-    footer{
-      padding:22px 0 30px;
-      border-top:1px solid var(--line);
-      color:rgba(255,255,255,.72);
+  
+    /* Photo service images (override) */
+    .service-img{
+      width:100%;
+      height:170px;
+      border-radius: 14px;
+      overflow:hidden;
+      margin-bottom: 12px;
+      background: rgba(0,0,0,.04);
+    }
+    .service-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:none !important;
     }
 
-    @media (max-width: 900px){
-      .hero-grid{grid-template-columns:1fr;}
-      .span-6, .span-4, .span-8{grid-column: span 12;}
-      .contact-box{grid-template-columns:1fr;}
-      h1{font-size:34px}
-      .links{display:none;}
-    }
   </style>
 </head>
-
 <body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="#top" aria-label="SimplyTech home">
-          <div class="logo" aria-hidden="true"></div>
-          <span><b>Simply</b>Tech</span>
-        </a>
-        <div class="links" aria-label="Site navigation">
-          <a href="#services">Services</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#process">Process</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <a class="btn" href="tel:+64211778778">Call 021 177 8778</a>
+
+<header>
+  <div class="container nav">
+    <div class="logo-wrap">
+      <div class="logo-icon">$</div>
+      <div>
+        <div class="logo-text-primary">SimplyTech</div>
+        <div class="logo-text-tagline">Technology Made Simple · Budget Saving</div>
       </div>
     </div>
+    <nav class="nav-links">
+      <a href="#services">Web Design</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#pc-services">PC Services</a>
+      <a href="#process">How it works</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-outline chat-btn" aria-label="Free 15-minute chat">
+      <span class="chat-ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M20 4H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3v3a1 1 0 0 0 1.6.8L13.5 18H20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" fill="currentColor"/>
+          <path d="M6 8h12M6 11h8" stroke="rgba(255,255,255,.9)" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Free 15-min chat
+    </a>
   </div>
+</header>
 
+<main>
   <!-- HERO -->
-  <div id="top" class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="panel">
-          <div class="pad">
-            <div class="kicker">HOME-BASED IT SERVICES • NEW ZEALAND</div>
-            <h1>Affordable PC & Laptop Support — done properly.</h1>
-            <p class="sub">
-              Windows setup, SSD upgrades with data migration, repairs, second-hand budget gaming PCs,
-              and RGB setup. Clear pricing, careful data handling, and friendly local support.
-            </p>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="eyebrow">NZ small business · WordPress · Cloud</div>
+        <h1>Professional <span>budget-friendly</span> websites for real-world businesses.</h1>
+        <p class="hero-sub">
+          SimplyTech builds clean, secure WordPress sites with cloud email and backups –
+          starting from <strong>$499</strong> for a business website and from <strong>$799</strong> for online commerce.
+          Designed for Kiwi SMEs who want to save money without looking “cheap”.
+        </p>
 
-            <div class="cta-row">
-              <a class="btn" href="#contact">Get a Free Quote</a>
-              <a class="btn secondary" href="#services">View Services</a>
-            </div>
-
-            <div class="badges">
-              <div class="badge">✅ Data-safe approach</div>
-              <div class="badge">✅ No upselling</div>
-              <div class="badge">✅ Tested & verified</div>
-              <div class="badge">✅ Fast turnaround</div>
-            </div>
-          </div>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn">View packages</a>
+          <a href="#contact" class="btn btn-outline">Ask for a custom quote</a>
         </div>
-
-        <!-- Hero “image” (SVG illustration) -->
-        <div class="panel">
-          <div class="thumb" style="height:100%; min-height:320px;">
-            <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="IT support illustration">
-              <defs>
-                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#19a463"/>
-                  <stop offset="1" stop-color="#2fb7ff"/>
-                </linearGradient>
-                <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0" stop-color="#0e7a4a"/>
-                  <stop offset="1" stop-color="#19a463"/>
-                </linearGradient>
-              </defs>
-              <rect x="110" y="70" width="520" height="320" rx="26" fill="url(#g)" opacity="0.20"/>
-              <rect x="140" y="95" width="520" height="320" rx="26" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" />
-              <rect x="170" y="125" width="460" height="250" rx="20" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
-              <path d="M300 250 l70 70 160-170" fill="none" stroke="url(#g)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="330" y="420" width="190" height="26" rx="13" fill="rgba(255,255,255,0.16)"/>
-              <path d="M250 470 h360" stroke="rgba(255,255,255,0.25)" stroke-width="14" stroke-linecap="round"/>
-              <circle cx="705" cy="155" r="10" fill="#19a463"/>
-              <circle cx="745" cy="195" r="14" fill="#2fb7ff"/>
-              <circle cx="690" cy="215" r="7" fill="#33d18f"/>
-              <rect x="675" y="260" width="180" height="115" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <path d="M710 330 h110" stroke="url(#g2)" stroke-width="18" stroke-linecap="round"/>
-              <path d="M710 295 h75" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round"/>
-            </svg>
-          </div>
-        </div>
+        <p class="hero-note">
+          Based in Auckland · Ideal for trades, retail, food, beauty, services, and local community businesses.
+        </p>
       </div>
+
+      <aside class="hero-card" aria-label="Key packages">
+        <div class="hero-card-row">
+          <div>
+            <div class="hero-label">Starter Website</div>
+            <div class="hero-price">From $499</div>
+          </div>
+          <div>
+            <div class="hero-label">Online Commerce</div>
+            <div class="hero-price">$799+</div>
+          </div>
+        </div>
+        <div class="hero-chip-row">
+          <span class="chip">WordPress + WooCommerce</span>
+          <span class="chip">Cloud email (Microsoft 365 / Google)</span>
+          <span class="chip">SSL &amp; security hardening</span>
+          <span class="chip-green">Designed to be simple for non-IT owners</span>
+        </div>
+        <div class="hero-chip-row">
+          <span class="chip">Backups to cloud storage</span>
+          <span class="chip">Mobile friendly</span>
+          <span class="chip">NZ GST-ready invoices & tax settings</span>
+        </div>
+      </aside>
     </div>
-  </div>
+  </section>
 
   <!-- SERVICES -->
   <section id="services">
     <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Services</h2>
-          <p>Professional, practical services for home users, students, and budget-conscious gamers.</p>
-        </div>
-      </div>
+      <h2 class="section-title">What SimplyTech does for you</h2>
+      <p class="section-subtitle">
+        One partner to handle your website, cloud email, and basic security – so you don’t have
+        to talk to five different tech people.
+      </p>
 
-      <div class="grid">
+      <div class="grid-3">
+        <article class="card">
+          <div class="pill">Smart Starter Website · from $499</div>
+          <h3>Business WordPress website</h3>
+          <p>
+            A clean one-page or small multi-page website built on WordPress, tailored to your brand,
+            with clear calls-to-action and Google-ready structure.
+          </p>
+          <ul class="price-features">
+            <li>Custom layout using modern theme</li>
+            <li>Mobile-friendly &amp; fast loading</li>
+            <li>Contact form, map, socials, basic SEO</li>
+            <li>Hosted on budget-friendly but secure infrastructure</li>
+          </ul>
+        </article>
 
-        <!-- OS setup -->
-        <div class="card span-6">
-          <div class="thumb">
-            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Windows setup illustration">
-              <defs>
-                <linearGradient id="os" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#19a463"/>
-                  <stop offset="1" stop-color="#2fb7ff"/>
-                </linearGradient>
-              </defs>
-              <rect x="80" y="40" width="520" height="160" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <rect x="110" y="70" width="460" height="100" rx="16" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
-              <path d="M150 120 h250" stroke="rgba(255,255,255,0.22)" stroke-width="12" stroke-linecap="round"/>
-              <path d="M150 150 h190" stroke="rgba(255,255,255,0.18)" stroke-width="12" stroke-linecap="round"/>
-              <circle cx="700" cy="120" r="60" fill="url(#os)" opacity="0.22"/>
-              <path d="M665 120 l22 22 48-58" fill="none" stroke="url(#os)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="content">
-            <h3>💻 Operating System Setup & Configuration</h3>
-            <p>Clean Windows install + secure setup to keep your device fast and reliable.</p>
-            <ul>
-              <li>Windows 10/11 install, updates, drivers</li>
-              <li>Microsoft 365 / Office setup</li>
-              <li>Performance optimisation & security basics</li>
-            </ul>
-          </div>
-        </div>
+        <article class="card">
+          <div class="pill">Online Commerce · from $799</div>
+          <h3>Simple online shop</h3>
+          <p>
+            WooCommerce-based online store with secure payments, shipping rules, GST configuration,
+            and product templates you can update yourself.
+          </p>
+          <ul class="price-features">
+            <li>Up to starter set of products loaded</li>
+            <li>Card payments (Stripe/PayPal)</li>
+            <li>NZ GST &amp; shipping zones configured</li>
+            <li>Optional Facebook / Instagram catalogue sync</li>
+          </ul>
+        </article>
 
-        <!-- SSD migration -->
-        <div class="card span-6">
-          <div class="thumb">
-            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="SSD upgrade illustration">
-              <defs>
-                <linearGradient id="ssd" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#19a463"/>
-                  <stop offset="1" stop-color="#0e7a4a"/>
-                </linearGradient>
-              </defs>
-              <rect x="90" y="70" width="360" height="120" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <rect x="120" y="95" width="300" height="70" rx="14" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
-              <circle cx="155" cy="130" r="10" fill="#19a463"/>
-              <circle cx="190" cy="130" r="10" fill="#2fb7ff"/>
-              <path d="M520 130 h220" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round"/>
-              <path d="M650 95 l70 35 -70 35" fill="none" stroke="url(#ssd)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="760" y="85" width="70" height="90" rx="14" fill="url(#ssd)" opacity="0.22" stroke="rgba(255,255,255,0.18)"/>
-              <path d="M774 145 h42" stroke="url(#ssd)" stroke-width="10" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="content">
-            <h3>💾 Hard Drive Upgrade & Data Migration</h3>
-            <p>Upgrade to SSD/NVMe for a huge speed boost — without losing your important files.</p>
-            <ul>
-              <li>HDD → SSD / NVMe upgrade</li>
-              <li>OS migration + data preservation</li>
-              <li>Boot optimisation & health checks</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Repair -->
-        <div class="card span-6">
-          <div class="thumb">
-            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="PC repair illustration">
-              <defs>
-                <linearGradient id="rep" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#2fb7ff"/>
-                  <stop offset="1" stop-color="#19a463"/>
-                </linearGradient>
-              </defs>
-              <rect x="90" y="60" width="380" height="140" rx="20" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <rect x="120" y="85" width="320" height="90" rx="14" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
-              <path d="M560 75 l80 80" stroke="url(#rep)" stroke-width="18" stroke-linecap="round"/>
-              <path d="M640 75 l-80 80" stroke="rgba(255,255,255,0.22)" stroke-width="18" stroke-linecap="round"/>
-              <circle cx="720" cy="150" r="48" fill="url(#rep)" opacity="0.18"/>
-              <path d="M720 118 v64" stroke="url(#rep)" stroke-width="14" stroke-linecap="round"/>
-              <path d="M688 150 h64" stroke="url(#rep)" stroke-width="14" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="content">
-            <h3>🛠️ PC & Laptop Fixing</h3>
-            <p>Honest troubleshooting and repairs for common hardware and software issues.</p>
-            <ul>
-              <li>Slow performance, crashes, boot issues</li>
-              <li>Malware/cleanup & stability fixes</li>
-              <li>Hardware diagnostics (RAM, storage, thermals)</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Gaming PC -->
-        <div class="card span-6">
-          <div class="thumb">
-            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Gaming PC illustration">
-              <defs>
-                <linearGradient id="gm" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#19a463"/>
-                  <stop offset="1" stop-color="#2fb7ff"/>
-                </linearGradient>
-              </defs>
-              <rect x="120" y="50" width="220" height="160" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <rect x="150" y="80" width="160" height="100" rx="16" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
-              <circle cx="230" cy="130" r="28" fill="url(#gm)" opacity="0.25"/>
-              <circle cx="230" cy="130" r="14" fill="rgba(255,255,255,0.12)"/>
-              <rect x="420" y="95" width="360" height="90" rx="45" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <circle cx="520" cy="140" r="18" fill="url(#gm)" opacity="0.35"/>
-              <circle cx="680" cy="140" r="18" fill="url(#gm)" opacity="0.35"/>
-              <path d="M600 125 v30" stroke="rgba(255,255,255,0.22)" stroke-width="10" stroke-linecap="round"/>
-              <path d="M585 140 h30" stroke="rgba(255,255,255,0.22)" stroke-width="10" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="content">
-            <h3>🎮 Second-Hand Budget Gaming PCs</h3>
-            <p>Value-focused gaming builds made from tested used parts — optimised and stress-tested.</p>
-            <ul>
-              <li>Custom build to your budget & games</li>
-              <li>Clean Windows install + drivers</li>
-              <li>Stress test + upgrade advice</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- RGB -->
-        <div class="card span-12">
-          <div class="thumb">
-            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="RGB lighting illustration">
-              <defs>
-                <linearGradient id="rgb" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#ff4fd8"/>
-                  <stop offset=".5" stop-color="#2fb7ff"/>
-                  <stop offset="1" stop-color="#19a463"/>
-                </linearGradient>
-              </defs>
-              <rect x="90" y="70" width="520" height="120" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <rect x="120" y="95" width="460" height="70" rx="16" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
-              <path d="M140 130 h420" stroke="url(#rgb)" stroke-width="16" stroke-linecap="round"/>
-              <circle cx="700" cy="120" r="55" fill="url(#rgb)" opacity="0.18"/>
-              <path d="M700 85 l12 22 25 6 -18 18 4 26 -23-12 -23 12 4-26 -18-18 25-6z" fill="url(#rgb)" opacity="0.35"/>
-            </svg>
-          </div>
-          <div class="content">
-            <h3>🌈 RGB Gaming Light Installation</h3>
-            <p>Clean RGB fan/strip installation, software setup, and tidy cable management for a great look.</p>
-            <ul>
-              <li>RGB strips/fans install + controller setup</li>
-              <li>Lighting profiles + sync configuration</li>
-              <li>Layout tips for a cleaner aesthetic</li>
-            </ul>
-          </div>
-        </div>
-
+        <article class="card">
+          <div class="pill">Cloud &amp; Security Add-Ons</div>
+          <h3>Cloud email, backup &amp; protection</h3>
+          <p>
+            Enterprise ideas, simplified for small business. You keep control of your accounts – SimplyTech
+            just makes everything work together.
+          </p>
+          <ul class="price-features">
+            <li>Microsoft 365 or Google Workspace setup</li>
+            <li>Professional email @yourdomain</li>
+            <li>Cloud backups for site &amp; files</li>
+            <li>Basic firewall, malware scans, and MFA guidance</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- PRICING -->
+  
+  <!-- PC & LAPTOP SERVICES -->
+  <section id="pc-services">
+    <div class="container">
+      <h2 class="section-title">PC &amp; Laptop Services (Home-based)</h2>
+      <p class="section-subtitle">
+        Fast, careful, and budget-friendly PC help — ideal for home users, students, and gaming builds.
+        Data safety and clear communication first.
+      </p>
+
+
+      <div class="card" style="margin-top:18px;">
+        <div class="pill">PC Service Pricing (Guide)</div>
+        <h3 style="margin-top:10px;">Simple pricing you can understand</h3>
+        <p class="section-subtitle" style="margin-top:6px;">
+          These are common starting prices (NZD). Final price depends on device condition, parts required, and data/backup needs.
+          You’ll always receive a quote before work starts.
+        </p>
+
+        <div class="grid-3" style="margin-top:14px;">
+          <article class="card">
+            <div class="pill">From $79</div>
+            <h3>Windows setup (PC/Laptop)</h3>
+            <ul class="price-features">
+              <li>Install/reset + drivers + updates</li>
+              <li>Security basics + performance tune</li>
+              <li>Office/M365 setup (if needed)</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="pill">From $99</div>
+            <h3>SSD upgrade + OS migration</h3>
+            <ul class="price-features">
+              <li>Clone/migrate OS + apps + files</li>
+              <li>Boot test + disk health checks</li>
+              <li><b>Parts not included</b> (SSD cost extra)</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="pill">From $59</div>
+            <h3>PC/Laptop fixing (diagnosis)</h3>
+<div class="service-img">
+  <img src="assets/img/laptop-repair.jpg" alt="PC and laptop repair">
+</div>
+
+            <ul class="price-features">
+              <li>Problem diagnosis + recommendation</li>
+              <li>Minor fixes included where possible</li>
+              <li>Repair quote provided if required</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="pill">From $499</div>
+            <h3>Budget gaming PC (second-hand)</h3>
+            <ul class="price-features">
+              <li>Build to your budget &amp; games</li>
+              <li>Stress test + benchmark report</li>
+              <li>Windows + drivers + optimisation</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="pill">From $49</div>
+            <h3>RGB installation</h3>
+            <ul class="price-features">
+              <li>Fans/strips install + controller</li>
+              <li>Software + profiles + syncing</li>
+              <li>Cable tidy-up</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="pill">From $39</div>
+            <h3>Backup / tune-up add-on</h3>
+            <ul class="price-features">
+              <li>Quick backup plan (before work)</li>
+              <li>Storage cleanup + health report</li>
+              <li>Written completion summary</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="note" style="margin-top:12px;">
+          *If you need urgent/same-day service, data recovery, or special parts, pricing may differ. Parts and software licenses (if any) are charged separately.
+        </p>
+      </div>
+
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="pill">Windows setup &amp; configuration</div>
+          <h3>Operating system setup (PC/Laptop)</h3>
+<div class="service-img">
+  <img src="assets/img/os-setup.jpg" alt="Windows OS setup">
+</div>
+
+          <p>
+            Clean Windows installation or repair, drivers &amp; updates, security basics, and performance tuning —
+            ready to use the same day in most cases.
+          </p>
+          <ul class="price-features">
+            <li>Windows 10/11 install or reset</li>
+            <li>Drivers, updates, essential apps</li>
+            <li>Microsoft 365 / Office setup</li>
+            <li>Startup optimisation &amp; health checks</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="pill">SSD upgrade &amp; migration</div>
+          <h3>Hard drive upgrade (keep your data)</h3>
+<div class="service-img">
+  <img src="assets/img/ssd.jpg" alt="SSD upgrade and migration">
+</div>
+
+          <p>
+            Upgrade HDD to SSD/NVMe for a massive speed boost. We clone/migrate your system and
+            verify the new drive boots correctly — with your files still intact.
+          </p>
+          <ul class="price-features">
+            <li>HDD → SSD/NVMe upgrade</li>
+            <li>OS + apps + files migrated</li>
+            <li>Old drive can be reused for storage</li>
+            <li>Post-migration boot &amp; disk checks</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="pill">Troubleshooting &amp; repair</div>
+          <h3>PC/Laptop fixing</h3>
+          <p>
+            Diagnose and repair slow performance, crashes, boot issues, overheating, or software problems.
+            Honest advice: fix, upgrade, or replace.
+          </p>
+          <ul class="price-features">
+            <li>Slow PC cleanup &amp; optimisation</li>
+            <li>Blue screen / boot repair</li>
+            <li>Virus/malware removal (safe approach)</li>
+            <li>Hardware checks (RAM, SSD/HDD, thermals)</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="pill">Value builds</div>
+          <h3>Second-hand budget gaming PCs</h3>
+<div class="service-img">
+  <img src="assets/img/gaming-pc.jpg" alt="Budget gaming PC">
+</div>
+
+          <p>
+            Best performance per dollar using tested second-hand parts. Clean build, stress test,
+            and a simple upgrade path.
+          </p>
+          <ul class="price-features">
+            <li>Build to your budget &amp; games</li>
+            <li>Benchmark + stress test included</li>
+            <li>Thermal paste &amp; airflow check</li>
+            <li>Windows + drivers + game-ready setup</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="pill">Setup &amp; cable tidy</div>
+          <h3>RGB gaming light installation</h3>
+<div class="service-img">
+  <img src="assets/img/rgb.jpg" alt="RGB gaming lighting">
+</div>
+
+          <p>
+            Install RGB fans/strips/controllers, set profiles, and tidy cables for a clean look —
+            synced the way you want.
+          </p>
+          <ul class="price-features">
+            <li>RGB fans/strips install</li>
+            <li>Controller + software configuration</li>
+            <li>Lighting profiles &amp; sync</li>
+            <li>Cable management tidy-up</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="pill">Optional add-ons</div>
+          <h3>Backup &amp; tune-up</h3>
+          <p>
+            Recommended before any major work: quick backup plan, system health report, and
+            a written summary of what was done.
+          </p>
+          <ul class="price-features">
+            <li>Data backup to external drive/cloud</li>
+            <li>SMART disk health report</li>
+            <li>Startup + storage clean-up</li>
+            <li>Simple handover notes</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="section-subtitle" style="margin-top:18px;">
+        Want a quote? Send your device model + what you need in the contact form below (or book a quick chat).
+      </p>
+    </div>
+  </section>
+
+
   <section id="pricing">
     <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Pricing</h2>
-          <p>Transparent “from” pricing — final cost depends on device condition and parts required.</p>
-        </div>
-        <a class="btn secondary" href="#contact">Ask for a Quote</a>
+      <h2 class="section-title">Simple, transparent pricing</h2>
+      <p class="section-subtitle">
+        No long contracts, no hidden fees. Prices in NZD and suitable for most small businesses.
+      </p>
+
+      <div class="pricing-grid">
+        <article class="price-card">
+          <div class="price-name">Smart Starter Website</div>
+          <div class="price-tagline">Perfect for trades, services &amp; local shops</div>
+          <div class="price-amount">$499+</div>
+          <div class="price-note">One-time build · Hosting billed separately</div>
+          <ul class="price-features">
+            <li>Up to 5 pages (Home, About, Services, Gallery, Contact)</li>
+            <li>Custom design using your logo &amp; colours</li>
+            <li>Basic on-page SEO &amp; Google Analytics</li>
+            <li>Contact form + click-to-call buttons</li>
+            <li>Security hardening &amp; SSL certificate</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Start with this</a>
+        </article>
+
+        <article class="price-card highlight">
+          <div class="price-name">Smart Online Commerce</div>
+          <div class="price-tagline">Sell products or services online with ease</div>
+          <div class="price-amount">$799+</div>
+          <div class="price-note">One-time build · Ideal for 1–300 products</div>
+          <ul class="price-features">
+            <li>All features of Smart Starter Website</li>
+            <li>WooCommerce shop (categories, product pages)</li>
+            <li>Online payments (Stripe/PayPal/PayNow)</li>
+            <li>Shipping, GST &amp; order notification setup</li>
+            <li>Basic training: how to add new products yourself</li>
+          </ul>
+          <a href="#contact" class="btn">Get ecommerce quote</a>
+        </article>
+
+        <article class="price-card">
+          <div class="price-name">Care &amp; Cloud Plans</div>
+          <div class="price-tagline">Keep things running smoothly</div>
+          <div class="price-amount">From $49/mo</div>
+          <div class="price-note">Cancel any time · No lock-in</div>
+          <ul class="price-features">
+            <li>WordPress updates &amp; weekly backups</li>
+            <li>Security monitoring &amp; uptime checks</li>
+            <li>Cloud email &amp; storage support (365 / Google)</li>
+            <li>Up to 30 minutes of minor changes/month</li>
+            <li>Discounted hourly rate for extra work</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Ask about care plan</a>
+        </article>
       </div>
 
-      <div class="grid">
-        <div class="card span-4">
-          <div class="thumb">
-            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Windows pricing illustration">
-              <defs><linearGradient id="p1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fb7ff"/><stop offset="1" stop-color="#19a463"/></linearGradient></defs>
-              <rect x="120" y="70" width="480" height="120" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <path d="M170 130 h240" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round"/>
-              <circle cx="700" cy="130" r="60" fill="url(#p1)" opacity="0.18"/>
-              <text x="680" y="145" font-size="52" fill="rgba(255,255,255,0.65)" font-family="system-ui,Segoe UI,Arial">$</text>
-            </svg>
-          </div>
-          <div class="content">
-            <h3>Windows Setup</h3>
-            <div class="price">$79–$99</div>
-            <p class="note">Includes drivers, updates, and basic optimisation.</p>
-          </div>
-        </div>
-
-        <div class="card span-4">
-          <div class="thumb">
-            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="SSD pricing illustration">
-              <defs><linearGradient id="p2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19a463"/><stop offset="1" stop-color="#0e7a4a"/></linearGradient></defs>
-              <rect x="160" y="80" width="360" height="100" rx="20" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <rect x="190" y="105" width="300" height="50" rx="14" fill="rgba(11,18,32,0.55)" stroke="rgba(255,255,255,0.18)"/>
-              <circle cx="700" cy="130" r="60" fill="url(#p2)" opacity="0.18"/>
-              <text x="680" y="145" font-size="52" fill="rgba(255,255,255,0.65)" font-family="system-ui,Segoe UI,Arial">$</text>
-            </svg>
-          </div>
-          <div class="content">
-            <h3>SSD Upgrade + Migration</h3>
-            <div class="price">from $99</div>
-            <p class="note">Labour pricing. Parts cost depends on SSD/NVMe choice.</p>
-          </div>
-        </div>
-
-        <div class="card span-4">
-          <div class="thumb">
-            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Gaming PC pricing illustration">
-              <defs><linearGradient id="p3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4fd8"/><stop offset="1" stop-color="#2fb7ff"/></linearGradient></defs>
-              <rect x="140" y="60" width="220" height="140" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <circle cx="250" cy="130" r="30" fill="url(#p3)" opacity="0.25"/>
-              <circle cx="700" cy="130" r="60" fill="url(#p3)" opacity="0.18"/>
-              <text x="680" y="145" font-size="52" fill="rgba(255,255,255,0.65)" font-family="system-ui,Segoe UI,Arial">$</text>
-            </svg>
-          </div>
-          <div class="content">
-            <h3>Budget Gaming PC</h3>
-            <div class="price">from $499</div>
-            <p class="note">Tested used parts + clean install + stress test.</p>
-          </div>
-        </div>
-      </div>
-
-      <p class="note" style="margin-top:12px;">
-        *GST not registered (until required). Payment due on completion. Customers should keep backups of critical data.
+      <p class="section-subtitle" style="margin-top:18px;">
+        Need something more custom (multi-location, booking system, membership, multilingual)?  
+        <strong>SimplyTech can scope a fixed-price project after a short call.</strong>
       </p>
     </div>
   </section>
@@ -526,117 +1093,145 @@
   <!-- PROCESS -->
   <section id="process">
     <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>How it Works</h2>
-          <p>A simple, professional process so you know what to expect.</p>
-        </div>
-      </div>
+      <h2 class="section-title">How it works – in plain language</h2>
+      <p class="section-subtitle">
+        A simple 3-step process. No complicated agency talk, no surprise invoices.
+      </p>
 
-      <div class="grid">
-        <div class="card span-4">
-          <div class="thumb">
-            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Message illustration">
-              <defs><linearGradient id="m1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fb7ff"/><stop offset="1" stop-color="#19a463"/></linearGradient></defs>
-              <rect x="150" y="80" width="520" height="110" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <path d="M200 120 h340" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round"/>
-              <path d="M200 155 h240" stroke="rgba(255,255,255,0.18)" stroke-width="14" stroke-linecap="round"/>
-              <circle cx="720" cy="135" r="52" fill="url(#m1)" opacity="0.18"/>
-            </svg>
-          </div>
-          <div class="content">
-            <h3>1) Message & Details</h3>
-            <p>Tell me your device model, issue, and preferred time. I’ll reply with a clear estimate.</p>
-          </div>
+      <div class="timeline">
+        <div class="timeline-step">
+          <span>Step 1</span>
+          <h3>Free chat &amp; fixed quote</h3>
+          <p>
+            You share what your business does and show any existing logo, photos or content.
+            SimplyTech recommends the right package and sends a clear quote in writing.
+          </p>
         </div>
-
-        <div class="card span-4">
-          <div class="thumb">
-            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Diagnosis illustration">
-              <defs><linearGradient id="m2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19a463"/><stop offset="1" stop-color="#0e7a4a"/></linearGradient></defs>
-              <circle cx="290" cy="130" r="60" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <circle cx="290" cy="130" r="32" fill="url(#m2)" opacity="0.18"/>
-              <path d="M340 180 l70 50" stroke="rgba(255,255,255,0.22)" stroke-width="16" stroke-linecap="round"/>
-              <rect x="460" y="90" width="280" height="90" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <path d="M500 130 h200" stroke="rgba(255,255,255,0.22)" stroke-width="14" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="content">
-            <h3>2) Diagnose & Confirm</h3>
-            <p>I confirm the cause, explain options, and you approve the work before I proceed.</p>
-          </div>
+        <div class="timeline-step">
+          <span>Step 2</span>
+          <h3>Build, review &amp; refine</h3>
+          <p>
+            Your website is built on a private link. You check the pages, request changes,
+            and only when you’re happy do we connect your domain and make it live.
+          </p>
         </div>
-
-        <div class="card span-4">
-          <div class="thumb">
-            <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" aria-label="Test and handover illustration">
-              <defs><linearGradient id="m3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fb7ff"/><stop offset="1" stop-color="#19a463"/></linearGradient></defs>
-              <rect x="150" y="70" width="520" height="120" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-              <path d="M230 130 l60 60 150-165" fill="none" stroke="url(#m3)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="720" cy="130" r="60" fill="url(#m3)" opacity="0.18"/>
-            </svg>
-          </div>
-          <div class="content">
-            <h3>3) Fix, Test, Handover</h3>
-            <p>Work completed, tested, and summarised. You receive an invoice and support tips.</p>
-          </div>
+        <div class="timeline-step">
+          <span>Step 3</span>
+          <h3>Launch &amp; light training</h3>
+          <p>
+            Once launched, you get a short walkthrough or video explaining how to update text,
+            products, and basic content – plus options for an ongoing care plan if you’d rather
+            SimplyTech handle it.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT & INDUSTRIES -->
   <section id="about">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>About SimplyTech</h2>
-          <p>Home-based IT service focused on practical results: faster devices, safer setups, honest advice — without retail prices.</p>
+    <div class="container split">
+      <div>
+        <h2 class="section-title">About SimplyTech</h2>
+        <p class="section-subtitle">
+          A cloud-minded web partner focused on practical results, not jargon.
+        </p>
+        <p style="margin-bottom:10px;font-size:14px;color:var(--muted);">
+          SimplyTech is run by an IT professional with hands-on experience in Windows systems,
+          WordPress, AWS and Azure cloud. The goal is straightforward: bring big-company
+          technology practices to small businesses in a way that is affordable and easy to manage.
+        </p>
+        <p style="margin-bottom:10px;font-size:14px;color:var(--muted);">
+          You always keep ownership of your domain, hosting and cloud accounts.
+          SimplyTech sets everything up cleanly, documents it, and makes sure you are not locked in.
+        </p>
+        <p style="font-size:14px;color:var(--muted);">
+          Based in Auckland, serving businesses across New Zealand with remote tools and clear,
+          friendly communication.
+        </p>
+      </div>
+      <aside>
+        <h3 style="font-size:15px;color:var(--primary);margin-bottom:8px;">Industries SimplyTech works well with</h3>
+        <div class="tag-cloud">
+          <span>Mini supermarkets &amp; fruit &amp; veg</span>
+          <span>Cafés &amp; takeaways</span>
+          <span>Hair &amp; beauty</span>
+          <span>Tradies &amp; home services</span>
+          <span>Second-hand &amp; refurb shops</span>
+          <span>Professional services</span>
+          <span>Solo consultants</span>
+          <span>Community groups &amp; non-profits</span>
         </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO PLACEHOLDER -->
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Example layouts &amp; demo sites</h2>
+      <p class="section-subtitle">
+        Here are sample layouts you can show clients. Replace screenshots with your real work later.
+      </p>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Local Fruit &amp; Veg Shop</h3>
+          <p>Homepage showcasing specials, opening hours, and a simple catalogue for click-and-collect.</p>
+          <p style="font-size:12px;color:var(--muted);">Demo URL placeholder: <em>https://demo.simplytech.nz/fruitshop</em></p>
+        </article>
+        <article class="card">
+          <h3>Trade Services Landing Page</h3>
+          <p>Single-page site for a plumber, electrician or handyman with quote form and Google Reviews embed.</p>
+          <p style="font-size:12px;color:var(--muted);">Demo URL placeholder: <em>https://demo.simplytech.nz/tradie</em></p>
+        </article>
+        <article class="card">
+          <h3>Small Online Store</h3>
+          <p>WooCommerce shop for 20–100 products, ideal for health products, accessories, or gifts.</p>
+          <p style="font-size:12px;color:var(--muted);">Demo URL placeholder: <em>https://demo.simplytech.nz/store</em></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Common questions</h2>
+
+      <div class="faq-item">
+        <h3>Can I really get a good website for $499?</h3>
+        <p>
+          Yes – as long as the scope is clear and focused. The Smart Starter package is designed for
+          lean, effective sites that avoid unnecessary complexity. If you need advanced features,
+          SimplyTech will quote those separately so you can decide.
+        </p>
       </div>
 
-      <div class="grid">
-        <div class="span-8">
-          <div class="card">
-            <div class="content">
-              <h3>What you can expect</h3>
-              <ul>
-                <li><b>Clear communication</b> — you’ll understand the issue and the fix.</li>
-                <li><b>Data-first mindset</b> — backup/migration steps where applicable.</li>
-                <li><b>No upselling</b> — only what you actually need.</li>
-                <li><b>Tested outcomes</b> — boot, performance, and stability checks.</li>
-              </ul>
+      <div class="faq-item">
+        <h3>What extra costs should I expect?</h3>
+        <p>
+          You’ll pay ongoing hosting and domain fees (usually between $10–$30 per month depending on
+          platform), plus any subscriptions such as Microsoft 365 or Google Workspace if you choose
+          cloud email. These are billed directly to you by the provider.
+        </p>
+      </div>
 
-              <div class="mini">
-                <div class="pill">📍 Home-based (NZ)</div>
-                <div class="pill">🕒 Fast turnaround</div>
-                <div class="pill">🧰 Budget-friendly solutions</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="faq-item">
+        <h3>Do I own my website and domain?</h3>
+        <p>
+          Yes. All accounts and licences are created in your name. SimplyTech documents logins and
+          settings so you retain full control even if we stop working together one day.
+        </p>
+      </div>
 
-        <div class="span-4">
-          <div class="panel">
-            <div class="thumb" style="height:100%; min-height:260px;">
-              <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" aria-label="Technology illustration">
-                <defs>
-                  <linearGradient id="ab" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#19a463"/>
-                    <stop offset="1" stop-color="#2fb7ff"/>
-                  </linearGradient>
-                </defs>
-                <rect x="160" y="120" width="580" height="280" rx="28" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-                <path d="M230 200 h440" stroke="rgba(255,255,255,0.22)" stroke-width="16" stroke-linecap="round"/>
-                <path d="M230 260 h300" stroke="rgba(255,255,255,0.18)" stroke-width="16" stroke-linecap="round"/>
-                <circle cx="260" cy="340" r="18" fill="url(#ab)" opacity="0.35"/>
-                <circle cx="320" cy="340" r="18" fill="url(#ab)" opacity="0.25"/>
-                <circle cx="380" cy="340" r="18" fill="url(#ab)" opacity="0.18"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
+      <div class="faq-item">
+        <h3>I’m not technical. How much do I have to manage?</h3>
+        <p>
+          If you enjoy maintaining things yourself, you’ll get training and notes. If you’d rather
+          not touch anything, a Care plan means SimplyTech handles all updates and technical bits
+          for a modest monthly fee.
+        </p>
       </div>
     </div>
   </section>
@@ -644,83 +1239,98 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>Contact</h2>
-          <p>Send your details and I’ll reply with a clear quote. Or call directly.</p>
-        </div>
-        <a class="btn" href="tel:+64211778778">Call 021 177 8778</a>
-      </div>
+      <h2 class="section-title">Let’s talk about your project</h2>
+      <p class="section-subtitle">
+        Share a few details and you’ll get a friendly reply – not a hard sell.  
+        Prefer phone or WhatsApp? Add your number and a best time to call.
+      </p>
 
-      <div class="card">
-        <div class="content">
-          <div class="contact-box">
-            <div>
-              <h3 style="margin-top:0;">Quick Quote (Email)</h3>
-              <p class="note">Tap the button below to send your details by email instantly.</p>
+      <div class="contact-grid">
+        <form action="#" method="post">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
 
-              <div class="field">
-                <label>Name</label>
-                <input placeholder="Your name" />
-              </div>
+          <label for="business">Business name</label>
+          <input type="text" id="business" name="business">
 
-              <div class="field" style="margin-top:10px;">
-                <label>Device + Issue</label>
-                <textarea placeholder="Example: Dell laptop, very slow. Want SSD upgrade and keep all files."></textarea>
-              </div>
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
 
-              <div class="cta-row" style="margin-top:12px;">
-                <a class="btn" href="mailto:info@simplytech.co.nz?subject=Quote%20Request%20-%20SimplyTech&body=Hi%20SimplyTech%2C%0A%0AName%3A%20%0APhone%3A%20%0ADevice%3A%20%0AIssue%2FService%3A%20%0APreferred%20time%3A%20%0A%0AThanks%2C">
-                  Email for Quote
-                </a>
-                <a class="btn secondary" href="#pricing">See Pricing</a>
-              </div>
+          <label for="package">Interested in</label>
+          <select id="package" name="package">
+            <option value="">Select a package</option>
+            <option value="starter">Smart Starter Website ($499+)</option>
+            <option value="commerce">Smart Online Commerce ($799+)</option>
+            <option value="care">Care & Cloud Plan</option>
+            <option value="other">Not sure yet – please advise</option>
+          </select>
 
-              <div class="mini" style="margin-top:14px;">
-                <div class="pill">📧 info@simplytech.co.nz</div>
-                <div class="pill">📞 021 177 8778</div>
-              </div>
-            </div>
+          <label for="message">Tell SimplyTech a bit about what you need</label>
+          <textarea id="message" name="message"
+                    placeholder="Example: We’re a small fruit & veg shop in Auckland and want a simple site with weekly specials and contact details."></textarea>
 
-            <div class="panel">
-              <div class="thumb" style="height:100%; min-height:280px;">
-                <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" aria-label="Support illustration">
-                  <defs>
-                    <linearGradient id="ct" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0" stop-color="#2fb7ff"/>
-                      <stop offset="1" stop-color="#19a463"/>
-                    </linearGradient>
-                  </defs>
-                  <circle cx="300" cy="260" r="120" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-                  <path d="M240 260 l50 50 110-130" fill="none" stroke="url(#ct)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-                  <rect x="480" y="180" width="280" height="160" rx="26" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
-                  <path d="M520 235 h190" stroke="rgba(255,255,255,0.22)" stroke-width="16" stroke-linecap="round"/>
-                  <path d="M520 285 h140" stroke="rgba(255,255,255,0.18)" stroke-width="16" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div class="content">
-                <p class="note">Tip: Put this file as <b>index.html</b> in your GitHub repo root for GitHub Pages.</p>
-              </div>
-            </div>
+          <button type="submit" class="btn">Send enquiry</button>
+        </form>
 
+        <aside>
+          <div class="card">
+            <h3 style="margin-bottom:4px;color:var(--primary);">Contact details</h3>
+            <p style="font-size:13px;color:var(--muted);margin-bottom:10px;">
+              Auckland, New Zealand · Working with clients nationwide via online tools.
+            </p>
+            <p style="font-size:13px;color:var(--muted);">
+              Email: <strong>info@simplytech.co.nz</strong> (example)<br>
+              Phone/WhatsApp: <strong>021 177 8778</strong> (add your real number)
+            </p>
           </div>
-        </div>
-      </div>
 
+          <div class="card" style="margin-top:14px;">
+            <h3 style="margin-bottom:6px;font-size:14px;color:var(--primary);">Good to know</h3>
+            <ul class="price-features">
+              <li>Fixed-price quote before work starts</li>
+              <li>Invoices show GST clearly for your records</li>
+              <li>Simple contract written in plain English</li>
+              <li>Ideal for budget-conscious and first-time website owners</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
+</main>
 
-  <footer>
-    <div class="container">
-      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-        <div>© <span id="year"></span> SimplyTech. All rights reserved.</div>
-        <div>Windows • SSD upgrades • Repairs • Gaming PCs • RGB</div>
-      </div>
-    </div>
-  </footer>
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> SimplyTech. All rights reserved.</div>
+    <div>Technology Made Simple · Budget Saving · Serving NZ small business.</div>
+  </div>
+</footer>
+
+<script>
+  // Auto year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
   </script>
+
+
+  <script>
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 16) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    });
+  </script>
+
 </body>
 </html>
